@@ -1,0 +1,78 @@
+package lab_04;
+
+public class main {
+	public static void main(String[] args) {
+		/*
+		// zad 2
+		new Osoba(); 
+		//zad 1
+		Osoba obiekt1 = new Osoba("Grzegorz", "Cichosz", "1999-05-18");
+		Osoba obiekt2 = new Osoba("Jacek", "Balcerzak", "1978-02-10");
+		Osoba obiekt3 = new Osoba("Jerzy", "Jeż", "2001-09-11");
+		System.out.println(obiekt1.imię + " " + obiekt1.nazwisko);
+		
+		//zad 4 
+		System.out.println(obiekt3.nazwisko);			
+		
+		Osoba Najstarszy= obiekt1;
+		//zad 3, 5 i 6
+		System.out.println();	
+		for(int i=0;i<(Osoba.listaOsób.size());i++) {
+			System.out.println(Osoba.listaOsób.get(i));
+			Osoba.listaOsób.get(i);
+			if (Osoba.wiek(Osoba.listaOsób.get(i).dataUr)>Osoba.wiek(Najstarszy.dataUr)) {
+				Najstarszy=Osoba.listaOsób.get(i);
+			}
+			System.out.println();	
+		}
+		
+		
+
+		System.out.println("-Najstarsza Osoba-");
+		System.out.println(Najstarszy);
+	*/	
+		
+	Uczeń st=new Uczeń();
+	Uczeń st1=new Uczeń();
+	//System.out.println("są równi" +st.jestRówny(st1)+" ");
+	//System.out.println("są równi" +(st==st1)+" ");
+	
+	st1.imię="Jack";
+	st1.nazwisko="Aligator";
+	st1.dataUr="1939-09-01";
+	//zad 1
+	new Uczeń();
+	new Uczeń();
+	st.dataUr="2012-09-01";
+
+	/*
+	System.out.println();	
+	for(int i=0;i<(Uczeń.listaUczniów.size());i++) {
+		//zad 2
+		System.out.println(Uczeń.listaUczniów.get(i));
+		//zad 3
+		for(int j=0;j<(Uczeń.listaUczniów.size());j++) {
+			if(j!=i) {
+				System.out.println("Uczniowie będący obiektami o indeksach "+i+" oraz "+j+" są równi: " 
+				+Uczeń.listaUczniów.get(i).jestRówny(Uczeń.listaUczniów.get(j))+" ");	
+				
+			}
+		}
+		System.out.println("______________________________________________________");	
+		System.out.println();	
+		
+
+	}
+
+	System.out.println(Uczeń.określUczniaNajstarszego());
+	System.out.println();
+	Uczeń zMaxSr= Uczeń.określUczniaZMaxŚrednią();
+	System.out.println(zMaxSr.nazwisko+" "+zMaxSr.imię);
+	System.out.println(zMaxSr);
+	System.out.println();
+		*/
+	Uczeń.drukujListęUczniów();
+	Uczeń.zamieńUczniów();
+	Uczeń.drukujListęUczniów();
+}
+}

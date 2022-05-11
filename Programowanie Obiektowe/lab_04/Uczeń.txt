@@ -1,0 +1,87 @@
+package lab_04;
+import java.util.ArrayList;
+
+public class Uczeń extends Osoba{
+
+	String szkoła = "LO 123";
+	String profil = "Mat-fiz";
+	String dataRozp = "2017-09-01";
+	Double średnia = 4.07;
+	static ArrayList<Uczeń> listaUczniów = new ArrayList<>();
+
+	public Uczeń(String a, String b, String c, String d, String e, double x) {
+		imię = a;
+		nazwisko = b;
+		dataUr = c;
+		szkoła = d;
+		dataRozp = e;
+		średnia = x;
+		listaUczniów.add(this);
+	}
+	public Uczeń() {
+		listaUczniów.add(this);
+	}
+	
+	public String toString(){
+		return super.toString() 
+			+ "\nSzkoła: " +  szkoła 
+			+ "\nProfil:  " + profil 
+			+ "\nRozpoczął: " + dataRozp 
+			+ "\nUczy się:  " + String.format("%5.2f", wiek(dataRozp)) 
+			+ "\nLat: " + String.format("\nŚrednia %5.2f", średnia);	
+	}
+	
+	public boolean jestRówny(Uczeń inny) {
+		return this.imię.equals(inny.imię) && this.nazwisko.equals(inny.nazwisko) && this.dataUr.equals(inny.dataUr); 
+	}
+	
+	public static Uczeń określUczniaZMaxŚrednią() {
+		Uczeń zMaxOceną= listaUczniów.get(0);
+		for (int i=1;i<listaUczniów.size();i++) {
+			if(listaUczniów.get(i).średnia>zMaxOceną.średnia) {
+				zMaxOceną=listaUczniów.get(i);
+			}
+		}
+		return zMaxOceną;
+	}
+	public static Uczeń określUczniaNajstarszego() {
+		Uczeń ity;
+		Uczeń najstarszy = listaUczniów.get(0);
+		for (int i=1; i<listaUczniów.size(); i++) {
+			ity = listaUczniów.get(i);
+			if(ity.wiek(ity.dataUr) > najstarszy.wiek(najstarszy.dataUr))
+				najstarszy=ity;
+		}
+		return najstarszy;
+	}
+	
+	static void zamieńUczniów() {
+		int pozNajmłodszy =0;
+		int pozNajstarszy =0;
+		Uczeń ity;
+		Uczeń najmłodszy =listaUczniów.get(0);
+		Uczeń najstarszy =listaUczniów.get(0);
+		for (int i=1;i <listaUczniów.size();i++) {
+			ity = listaUczniów.get(i);
+			if(ity.wiek(ity.dataUr)>najstarszy.wiek(najstarszy.dataUr)) {
+				najstarszy= ity;
+				pozNajstarszy=i;
+			}
+			if(ity.wiek(ity.dataUr)<najmłodszy.wiek(najmłodszy.dataUr)) {
+				najmłodszy= ity;
+				pozNajmłodszy=i;
+			}
+		listaUczniów.set(pozNajmłodszy, najstarszy);
+		listaUczniów.set(pozNajstarszy, najmłodszy);
+		}
+	}
+	
+	public static void drukujListęUczniów(){
+		System.out.println();	
+		for(int i=0;i<(Uczeń.listaUczniów.size());i++) {
+			System.out.println(Uczeń.listaUczniów.get(i));
+		}
+	}
+	
+}
+

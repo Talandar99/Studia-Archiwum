@@ -1,0 +1,34 @@
+package lab_01;
+
+public class TestOb extends Object{
+	//static public int aaa = 10;
+	public int aaa = 10;
+	
+	public boolean equals(TestOb obj) {
+		return this.aaa == obj.aaa;
+	}
+
+	public static void main(String[] args) {
+		
+		TestOb o1 = new TestOb();
+		System.out.println(o1.aaa);
+		
+		TestOb o2 = new TestOb();
+		
+		o2.aaa = 20;
+		System.out.println(o2.equals(o1)); //porównanie obiekta pierwszego do drugiego
+		System.out.println(o1.aaa); //drukuj obiekt 1
+		System.out.println(o2.aaa); //drukuj obiekt 2
+		
+		System.out.println("Aliasowanie");
+		//Aliasowanie
+		TestOb o3 = o2;
+		System.out.println(o3.aaa); 
+		
+		o2.aaa = 2;
+		o3.aaa = 3;
+		System.out.println(o2.aaa); 
+		System.out.println(o3.aaa); 	
+		}
+}
+

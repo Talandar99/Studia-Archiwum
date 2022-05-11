@@ -1,0 +1,34 @@
+package lab_05;
+
+import java.text.Collator;
+import java.util.Comparator;
+import java.util.Locale;
+
+public class Comparator_v1 {
+
+		public String s1 = "dwa2";
+		public String s2 = "trzy3";
+		public String s3 = "trzy3";
+		public String s4 = "trzy3";
+		public String s5 = "pięć5";
+		public String s6 = "cztery4";
+		
+		String suma;
+		
+		public String suma() {
+			this.suma = this.s1 + " plus " + this.s2 + " = " + s1 +s2;
+			return this.suma;
+		}
+		
+		
+		Comparator <String> komparator = new Comparator<String>() {
+			Collator c = Collator.getInstance(new Locale("pl","PL"));
+			
+			@Override
+			public int compare(String s1,String s2) {
+				return c.compare(s1, s2);
+			}
+			
+		};
+
+}

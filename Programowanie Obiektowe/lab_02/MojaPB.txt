@@ -1,0 +1,22 @@
+package lab_02;
+
+public class MojaPB {
+		int x=23;
+		public String toString() {
+			return "klasa bazowa "+ this.getClass().getName()+"\n";
+		}
+
+	public static void main(String[] args) {
+		//MojaP MojaP =new MojaPB(); 
+		//MojaPB.toString(); 
+		//System.out.println(MojaPB);
+		MojaP obiekt =new MojaP(); 
+		obiekt.określXB(125);
+		System.out.println("Suma= "+ obiekt.określSumę());
+		System.out.println(obiekt);
+		MojaP obiekt2=new MojaP();
+		MojaP obiekt3=new MojaP();
+		System.out.println("utworzono " + MojaP.ile);
+	}
+
+}

@@ -1,0 +1,36 @@
+package lab_03;
+
+public class main {
+	public static void main(String[] args) {
+		// zad 2
+		new Osoba(); 
+		//zad 1
+		Osoba obiekt1 = new Osoba("Grzegorz", "Cichosz", "1999-05-18");
+		Osoba obiekt2 = new Osoba("Jacek", "Balcerzak", "1978-02-10");
+		Osoba obiekt3 = new Osoba("Jerzy", "Jeż", "2001-09-11");
+		System.out.println(obiekt1.imię + " " + obiekt1.nazwisko);
+		
+		//zad 4 
+		System.out.println(obiekt3.nazwisko);			
+		
+		Osoba Najstarszy= obiekt1;
+		//zad 3, 5 i 6
+		System.out.println();	
+		for(int i=0;i<(Osoba.listaOsób.size());i++) {
+			System.out.println(Osoba.listaOsób.get(i));
+			Osoba.listaOsób.get(i);
+			if (Osoba.wiek(Osoba.listaOsób.get(i).dataUr)>Osoba.wiek(Najstarszy.dataUr)) {
+				Najstarszy=Osoba.listaOsób.get(i);
+			}
+			System.out.println();	
+		}
+		
+		
+
+		System.out.println("-Najstarsza Osoba-");
+		System.out.println(Najstarszy);
+
+
+	}
+}
+
